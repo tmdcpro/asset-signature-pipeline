@@ -1,0 +1,1 @@
+Next comes the shape of the return distribution. Skewness tells you whether extreme moves lean positive or negative. Excess kurtosis tells you how fat the tails are compared to a normal distribution. And the Hill estimator quantifies just how extreme the worst losses tend to get.

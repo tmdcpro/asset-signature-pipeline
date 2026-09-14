@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  width:1920px; height:1080px;
+  background: linear-gradient(135deg, #0f1420 0%, #1a2035 100%);
+  font-family: 'Noto Sans', 'DejaVu Sans', sans-serif;
+  display:flex; flex-direction:column;
+  color: #e8e8e8;
+  overflow:hidden;
+}
+.header {
+  padding: 56px 80px 24px 80px;
+}
+.eyebrow {
+  color: #7dd3fc; font-size: 26px; font-weight:600; letter-spacing: 3px; text-transform:uppercase;
+  margin-bottom: 14px;
+}
+.title {
+  font-size: 52px; font-weight:800; color: #ffffff; line-height:1.2;
+}
+.subtitle {
+  font-size: 28px; color: #a8b3cc; margin-top:14px; max-width:1600px; line-height:1.4;
+}
+.panel-wrap {
+  flex:1; padding: 10px 80px 70px 80px; display:flex; align-items:flex-start;
+}
+.editor {
+  width:100%; background:#1e1f29; border-radius:16px; box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  overflow:hidden; border: 1px solid #33364a;
+}
+.editor-bar {
+  background:#2b2d3d; padding:16px 24px; display:flex; align-items:center; gap:10px;
+}
+.dot { width:16px; height:16px; border-radius:50%; }
+.dot.red { background:#ff5f56; }
+.dot.yellow { background:#ffbd2e; }
+.dot.green { background:#27c93f; }
+.filename { margin-left:16px; color:#8b91a8; font-size:20px; font-family: monospace; }
+.code {
+  font-family: 'DejaVu Sans Mono', monospace;
+  font-size: 25px;
+  line-height: 1.55;
+  padding: 34px 40px;
+  white-space: pre;
+  overflow: hidden;
+}
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.code .hll { background-color: #49483e }
+.code { background: #272822; color: #F8F8F2 }
+.code .c { color: #959077 } /* Comment */
+.code .err { color: #ED007E; background-color: #1E0010 } /* Error */
+.code .esc { color: #F8F8F2 } /* Escape */
+.code .g { color: #F8F8F2 } /* Generic */
+.code .k { color: #66D9EF } /* Keyword */
+.code .l { color: #AE81FF } /* Literal */
+.code .n { color: #F8F8F2 } /* Name */
+.code .o { color: #FF4689 } /* Operator */
+.code .x { color: #F8F8F2 } /* Other */
+.code .p { color: #F8F8F2 } /* Punctuation */
+.code .ch { color: #959077 } /* Comment.Hashbang */
+.code .cm { color: #959077 } /* Comment.Multiline */
+.code .cp { color: #959077 } /* Comment.Preproc */
+.code .cpf { color: #959077 } /* Comment.PreprocFile */
+.code .c1 { color: #959077 } /* Comment.Single */
+.code .cs { color: #959077 } /* Comment.Special */
+.code .gd { color: #FF4689 } /* Generic.Deleted */
+.code .ge { color: #F8F8F2; font-style: italic } /* Generic.Emph */
+.code .ges { color: #F8F8F2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.code .gr { color: #FF4689 } /* Generic.Error */
+.code .gh { color: #F8F8F2 } /* Generic.Heading */
+.code .gi { color: #A6E22E } /* Generic.Inserted */
+.code .go { color: #66D9EF } /* Generic.Output */
+.code .gp { color: #FF4689; font-weight: bold } /* Generic.Prompt */
+.code .gs { color: #F8F8F2; font-weight: bold } /* Generic.Strong */
+.code .gu { color: #959077 } /* Generic.Subheading */
+.code .gt { color: #66D9EF } /* Generic.Traceback */
+.code .kc { color: #66D9EF } /* Keyword.Constant */
+.code .kd { color: #66D9EF } /* Keyword.Declaration */
+.code .kn { color: #FF4689 } /* Keyword.Namespace */
+.code .kp { color: #66D9EF } /* Keyword.Pseudo */
+.code .kr { color: #66D9EF } /* Keyword.Reserved */
+.code .kt { color: #66D9EF } /* Keyword.Type */
+.code .ld { color: #E6DB74 } /* Literal.Date */
+.code .m { color: #AE81FF } /* Literal.Number */
+.code .s { color: #E6DB74 } /* Literal.String */
+.code .na { color: #A6E22E } /* Name.Attribute */
+.code .nb { color: #A6E22E } /* Name.Builtin */
+.code .nc { color: #A6E22E } /* Name.Class */
+.code .no { color: #66D9EF } /* Name.Constant */
+.code .nd { color: #A6E22E } /* Name.Decorator */
+.code .ni { color: #F8F8F2 } /* Name.Entity */
+.code .ne { color: #A6E22E } /* Name.Exception */
+.code .nf { color: #A6E22E } /* Name.Function */
+.code .nl { color: #F8F8F2 } /* Name.Label */
+.code .nn { color: #F8F8F2 } /* Name.Namespace */
+.code .nx { color: #A6E22E } /* Name.Other */
+.code .py { color: #F8F8F2 } /* Name.Property */
+.code .nt { color: #FF4689 } /* Name.Tag */
+.code .nv { color: #F8F8F2 } /* Name.Variable */
+.code .ow { color: #FF4689 } /* Operator.Word */
+.code .pm { color: #F8F8F2 } /* Punctuation.Marker */
+.code .w { color: #F8F8F2 } /* Text.Whitespace */
+.code .mb { color: #AE81FF } /* Literal.Number.Bin */
+.code .mf { color: #AE81FF } /* Literal.Number.Float */
+.code .mh { color: #AE81FF } /* Literal.Number.Hex */
+.code .mi { color: #AE81FF } /* Literal.Number.Integer */
+.code .mo { color: #AE81FF } /* Literal.Number.Oct */
+.code .sa { color: #E6DB74 } /* Literal.String.Affix */
+.code .sb { color: #E6DB74 } /* Literal.String.Backtick */
+.code .sc { color: #E6DB74 } /* Literal.String.Char */
+.code .dl { color: #E6DB74 } /* Literal.String.Delimiter */
+.code .sd { color: #E6DB74 } /* Literal.String.Doc */
+.code .s2 { color: #E6DB74 } /* Literal.String.Double */
+.code .se { color: #AE81FF } /* Literal.String.Escape */
+.code .sh { color: #E6DB74 } /* Literal.String.Heredoc */
+.code .si { color: #E6DB74 } /* Literal.String.Interpol */
+.code .sx { color: #E6DB74 } /* Literal.String.Other */
+.code .sr { color: #E6DB74 } /* Literal.String.Regex */
+.code .s1 { color: #E6DB74 } /* Literal.String.Single */
+.code .ss { color: #E6DB74 } /* Literal.String.Symbol */
+.code .bp { color: #A6E22E } /* Name.Builtin.Pseudo */
+.code .fm { color: #A6E22E } /* Name.Function.Magic */
+.code .vc { color: #F8F8F2 } /* Name.Variable.Class */
+.code .vg { color: #F8F8F2 } /* Name.Variable.Global */
+.code .vi { color: #F8F8F2 } /* Name.Variable.Instance */
+.code .vm { color: #F8F8F2 } /* Name.Variable.Magic */
+.code .il { color: #AE81FF } /* Literal.Number.Integer.Long */
+.code .c1 { font-style: italic; }
+.footer-tag {
+  position:absolute; bottom:40px; right:80px; color:#5b6480; font-size:20px; font-family:monospace;
+}
+</style></head>
+<body>
+  <div class="header">
+    <div class="eyebrow">Step 6 &middot; Structural Signatures</div>
+    <div class="title">Bonds & Options</div>
+    <div class="subtitle">Contract-level instruments get their own signature from coupon/yield or strike/volatility inputs.</div>
+  </div>
+  <div class="panel-wrap">
+    <div class="editor">
+      <div class="editor-bar">
+        <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+        <div class="filename">signature_pipeline.py — bond & option signatures</div>
+      </div>
+      <div class="code"><span class="k">def</span><span class="w"> </span><span class="nf">bond_signature</span><span class="p">(</span><span class="n">face_value</span><span class="p">,</span> <span class="n">coupon_rate</span><span class="p">,</span>
+                    <span class="n">years_to_maturity</span><span class="p">,</span> <span class="n">ytm</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="c1"># ... discounts cash flows, then returns:</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"price"</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s2">"macaulay_duration"</span><span class="p">:</span> <span class="n">macaulay_duration</span><span class="p">,</span>
+            <span class="s2">"modified_duration"</span><span class="p">:</span> <span class="n">modified_duration</span><span class="p">,</span>
+            <span class="s2">"convexity"</span><span class="p">:</span> <span class="n">convexity</span><span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">option_signature</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">option_type</span><span class="o">=</span><span class="s2">"call"</span><span class="p">):</span>
+    <span class="c1"># Black-Scholes d1, d2 ...</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s2">"price"</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span> <span class="s2">"delta"</span><span class="p">:</span> <span class="n">delta</span><span class="p">,</span> <span class="s2">"gamma"</span><span class="p">:</span> <span class="n">gamma</span><span class="p">,</span>
+            <span class="s2">"theta_annual"</span><span class="p">:</span> <span class="n">theta</span><span class="p">,</span> <span class="s2">"vega"</span><span class="p">:</span> <span class="n">vega</span><span class="p">,</span> <span class="s2">"rho"</span><span class="p">:</span> <span class="n">rho</span><span class="p">}</span>
+</div>
+    </div>
+  </div>
+  <div class="footer-tag">signature_pipeline.py</div>
+</body></html>

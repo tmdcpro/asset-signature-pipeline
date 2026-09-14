@@ -1,0 +1,1 @@
+This is the asset signature vector pipeline, a Python tool that turns any financial asset's price history into a compact numerical fingerprint. Let's walk through how it works and how to run it.

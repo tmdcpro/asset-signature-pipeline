@@ -51,6 +51,13 @@ bond_signature(face_value=1000, coupon_rate=0.04, years_to_maturity=5, ytm=0.045
 option_signature(S=100, K=100, T=0.5, r=0.04, sigma=0.25, option_type="call")
 ```
 
+## Walkthrough video
+
+See [`video/asset_signature_pipeline_demo.mp4`](video/asset_signature_pipeline_demo.mp4)
+for a narrated screencast explaining the pipeline and showing a live run.
+The full production sources (slides, narration script, audio) are in
+[`video/`](video/).
+
 ## Sample output
 
 See `sample_output/asset_signatures.csv` for an example run across

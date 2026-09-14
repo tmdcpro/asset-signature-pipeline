@@ -1,0 +1,1 @@
+The results save straight to a CSV, ready to feed into clustering or comparison across a whole basket of assets. Swap in your own tickers, change the benchmark, or extend it with new metrics to build out your own asset fingerprinting workflow.

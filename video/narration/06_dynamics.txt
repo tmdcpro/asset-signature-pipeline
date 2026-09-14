@@ -1,0 +1,1 @@
+This layer captures how the asset behaves over time. The Hurst exponent reveals whether prices trend, mean revert, or move like a random walk. Autocorrelation of returns checks for momentum or reversal effects. And a fitted GARCH model describes how volatility clusters and decays after a shock, which is often the most distinctive part of an asset's fingerprint.

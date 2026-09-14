@@ -1,0 +1,1 @@
+For instruments that aren't fully described by a price series, the pipeline adds structural signatures. Feed in a bond's coupon, maturity, and yield to get its duration and convexity. Feed in an option's strike, expiry, and implied volatility to get its full set of greeks: delta, gamma, theta, vega, and rho.

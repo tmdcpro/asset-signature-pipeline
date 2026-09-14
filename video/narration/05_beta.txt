@@ -1,0 +1,1 @@
+The pipeline then measures market sensitivity. Beta shows how much the asset moves with its benchmark, and alpha shows the return left over after removing that market exposure. A beta near one means it moves with the market. A beta near zero, like a bond fund, means it marches to its own drum.

@@ -1,0 +1,1 @@
+You start by editing the config block. List the tickers you want to profile, pick a benchmark for comparison, set the lookback period, and set your risk free rate assumption. The pipeline then downloads adjusted price history for every ticker using yfinance, and converts prices into daily log returns, which every other calculation builds on.

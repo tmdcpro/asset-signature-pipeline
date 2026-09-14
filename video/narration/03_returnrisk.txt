@@ -1,0 +1,1 @@
+The first layer of the signature covers return and risk. Compound annual growth rate measures long run performance. Annualized volatility measures how bumpy the ride is. Sharpe and Sortino ratios measure return earned per unit of risk. Max drawdown and Calmar ratio capture the worst historical pain and how quickly the asset recovers from it.
